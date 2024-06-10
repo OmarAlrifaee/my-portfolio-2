@@ -1,14 +1,14 @@
 import { Header } from "@/components";
 import { Button } from "@/components/ui/button";
 import { sendForm } from "@emailjs/browser";
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
 export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null!);
   const { toast } = useToast();
   /* funcs */
-  const hundleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const hundleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       sendForm(
@@ -29,7 +29,7 @@ export const Contact = () => {
         description: "Something Went Wronge Please Try Agine",
       });
     }
-  };
+  }, [toast]);
   /* layouts */
   const FormContainer = ({ children }: { children: React.ReactNode }) => (
     <motion.div

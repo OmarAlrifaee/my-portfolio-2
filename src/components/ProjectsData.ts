@@ -11,6 +11,7 @@ import QUIZ_REACT_PHOTO from "/assets/projects/quiz-app-react.webp";
 import MEMORY_GAME_PHOTO from "/assets/projects/memory-game-js.jpeg";
 import HANGMAN_PHOTO from "/assets/projects/hangman-game-js.png";
 import THIRD_TEMPLATE_PHOTO from "/assets/projects/third-template.png";
+import NEXT_DASHBOARD_PHOTO from "/assets/projects/next-dashboard.png";
 
 const myProjects: ProjectsData = {
   All: [
@@ -34,6 +35,13 @@ const myProjects: ProjectsData = {
         "browes alot of exercises and pick the one you liked and go to it's page to show the full guide and a youtube videos to learn you how to do it, i build this project using react and sass for the styling as well as rapid api",
       imageUrl: GYM_PHOTO,
       link: "https://omaralrifaee.github.io/gym/",
+    },
+    {
+      title: "Next Dashboard",
+      description:
+        "a full stack admin dashboard where you can add update and delete users and products with an auth system using nextjs server actions with mongooDB and mongoose you can login as an admin using these \n email: admin@gmail.com \n password: admin",
+      imageUrl: NEXT_DASHBOARD_PHOTO,
+      link: "https://next-dashboard-black-three-57.vercel.app/",
     },
     {
       title: "YouTube Clone With youtube api v3",
@@ -99,6 +107,13 @@ const myProjects: ProjectsData = {
     },
   ],
   Best: [
+    {
+      title: "Next Dashboard",
+      description:
+        "a full stack admin dashboard where you can add update and delete users and products with an auth system using nextjs server actions with mongooDB and mongoose you can login as an admin using these \n email: admin@gmail.com \n password: admin",
+      imageUrl: NEXT_DASHBOARD_PHOTO,
+      link: "https://next-dashboard-black-three-57.vercel.app/",
+    },
     {
       title: "E-commerce App",
       description:
