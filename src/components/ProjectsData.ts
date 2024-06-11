@@ -108,32 +108,11 @@ const myProjects: ProjectsData = {
   ],
   Best: [
     {
-      title: "Next Dashboard",
-      description:
-        "a full stack admin dashboard where you can add update and delete users and products with an auth system using nextjs server actions with mongooDB and mongoose you can login as an admin using these \n email: admin@gmail.com \n password: admin",
-      imageUrl: NEXT_DASHBOARD_PHOTO,
-      link: "https://next-dashboard-black-three-57.vercel.app/",
-    },
-    {
-      title: "E-commerce App",
-      description:
-        "an e-commerce website build with an free api i found on the internet it contains a home page includes a swipes for the top 10 products and a categories swipe and you have a cart saved in the localstorage and a shop page that contains a filtering system like search and price range i build this project using react typescript and zustand for the state mangment",
-      imageUrl: E_COMMERCE_PHOTO,
-      link: "https://e-commerce-lilac-ten.vercel.app/",
-    },
-    {
       title: "Snap Gram a social media fullstack app",
       description:
         "i'ts a social media app similer to instagram you can create edit and remove posts as well as you can have a profile with auth system using appwrite platform for the backend and react with context api for auth as well as the strong shadcn ui library take a look..",
       imageUrl: SNAPGRAM_PHOTO,
       link: "https://snapgram-inky-xi.vercel.app/",
-    },
-    {
-      title: "YouTube Clone With youtube api v3",
-      description:
-        "a simple youtube clone with a responcive disign using tailwindcss and react as well as redux toolkit you can watch search and see the recommanded videos for that video you are watching",
-      imageUrl: YOUTUBE_CLONE_PHOTO,
-      link: "https://omaralrifaee.github.io/youtube-clone-react",
     },
   ],
 };
