@@ -42,7 +42,7 @@ export const ProjectCard = ({
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-fill"
           loading="lazy"
         />
       </motion.div>

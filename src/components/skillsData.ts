@@ -12,6 +12,7 @@ import TS from "/assets/skills/TypeScript.svg";
 import VS from "/assets/skills/vsCode.svg";
 import ZUSTAND from "/assets/skills/zustand.webp";
 import REACT_ROUTER from "/assets/skills/react-router-svgrepo-com.svg";
+import NEXTJS from "/assets/skills/nextjs.jpeg";
 import { SkillsData } from "@/Types";
 
 const skillsData: SkillsData = [
@@ -50,6 +51,10 @@ const skillsData: SkillsData = [
   {
     text: "REACT ROUTER",
     url: REACT_ROUTER,
+  },
+  {
+    text: "NEXT JS",
+    url: NEXTJS,
   },
   {
     text: "REDUX",

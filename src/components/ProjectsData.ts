@@ -12,9 +12,16 @@ import MEMORY_GAME_PHOTO from "/assets/projects/memory-game-js.jpeg";
 import HANGMAN_PHOTO from "/assets/projects/hangman-game-js.png";
 import THIRD_TEMPLATE_PHOTO from "/assets/projects/third-template.png";
 import NEXT_DASHBOARD_PHOTO from "/assets/projects/next-dashboard.png";
-
+import NEXT_ECOMMERCE_PHOTO from "/assets/projects/next-ecommerce.png";
 const myProjects: ProjectsData = {
   All: [
+    {
+      title: "Next E-commerce",
+      description:
+        "a fullstack ecommerce app build using nextjs and mongodb database with a dashboard to add edit or remove products, users, categories, and an auth system using jwt and nextjs middleware with a full search and filtering functinality and a cart system with a real payment using stripe and alot more i highly recommened visit this website and discover it",
+      imageUrl: NEXT_ECOMMERCE_PHOTO,
+      link: "https://next-ecommerce-lyart-psi.vercel.app/",
+    },
     {
       title: "E-commerce App",
       description:
@@ -107,6 +114,13 @@ const myProjects: ProjectsData = {
     },
   ],
   Best: [
+    {
+      title: "Next E-commerce",
+      description:
+        "a fullstack ecommerce app build using nextjs and mongodb database with a dashboard to add edit or remove products, users, categories, and an auth system using jwt and nextjs middleware with a full search and filtering functinality and a cart system with a real payment using stripe and alot more i highly recommened visit this website and discover it",
+      imageUrl: NEXT_ECOMMERCE_PHOTO,
+      link: "https://next-ecommerce-lyart-psi.vercel.app/",
+    },
     {
       title: "Snap Gram a social media fullstack app",
       description:
