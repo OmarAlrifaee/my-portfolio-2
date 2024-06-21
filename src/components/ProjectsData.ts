@@ -117,7 +117,7 @@ const myProjects: ProjectsData = {
     {
       title: "Next E-commerce",
       description:
-        "a fullstack ecommerce app build using nextjs and mongodb database with a dashboard to add edit or remove products, users, categories, and an auth system using jwt and nextjs middleware with a full search and filtering functinality and a cart system with a real payment using stripe and alot more i highly recommened visit this website and discover it",
+        "a fullstack ecommerce app build using nextjs and mongodb database with a dashboard to add edit or remove products, users, categories, and an auth system using jwt and nextjs middleware with a full search and filtering functinality and a cart system with a real payment using stripe and alot more i highly recommened visit this website and discover it you can sign in with these to see the dashboard email: admin@gmail.com  password: admin123 (all in small case)",
       imageUrl: NEXT_ECOMMERCE_PHOTO,
       link: "https://next-ecommerce-lyart-psi.vercel.app/",
     },
