@@ -1,8 +1,15 @@
 import { Header, TechBox } from "@/components";
 import skillsData from "@/components/skillsData";
+import { Helmet } from "react-helmet";
 export const TechStack = () => {
+  const Head = () => (
+    <Helmet>
+      <title>Tech Stack</title>
+    </Helmet>
+  );
   return (
     <section className="md:px-32 px-6 py-10 bg-main-bg-light dark:bg-main-bg-dark min-h-screen">
+      <Head />
       <Header
         title={"Tech Stack"}
         description={"The tools and technologies I use"}

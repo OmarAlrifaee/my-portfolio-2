@@ -4,32 +4,41 @@ import { sendForm } from "@emailjs/browser";
 import { useCallback, useRef } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null!);
   const { toast } = useToast();
   /* funcs */
-  const hundleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      sendForm(
-        import.meta.env.VITE_SERVICES_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_PUPLIC_KEY
-      );
-      e.currentTarget.reset();
-      toast({
-        title: "Success",
-        description: "Your Message Was Sent Successfully",
-      });
-    } catch (error) {
-      console.log(error);
-      toast({
-        title: "Error",
-        description: "Something Went Wronge Please Try Agine",
-      });
-    }
-  }, [toast]);
+  const hundleSubmit = useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      try {
+        sendForm(
+          import.meta.env.VITE_SERVICES_ID,
+          import.meta.env.VITE_TEMPLATE_ID,
+          formRef.current,
+          import.meta.env.VITE_PUPLIC_KEY
+        );
+        e.currentTarget.reset();
+        toast({
+          title: "Success",
+          description: "Your Message Was Sent Successfully",
+        });
+      } catch (error) {
+        console.log(error);
+        toast({
+          title: "Error",
+          description: "Something Went Wronge Please Try Agine",
+        });
+      }
+    },
+    [toast]
+  );
+  const Head = () => (
+    <Helmet>
+      <title>Contact</title>
+    </Helmet>
+  );
   /* layouts */
   const FormContainer = ({ children }: { children: React.ReactNode }) => (
     <motion.div
@@ -128,6 +137,7 @@ export const Contact = () => {
   );
   return (
     <section className="md:px-32 px-6 py-10 bg-main-bg-light dark:bg-main-bg-dark min-h-screen">
+      <Head />
       <Header description="Let’s build something awesome." title="Contact" />
       <FormContainer>
         <Form />

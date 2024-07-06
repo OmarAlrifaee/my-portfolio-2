@@ -7,9 +7,16 @@ import { FaSquareGithub } from "react-icons/fa6";
 import { MdArrowRightAlt } from "react-icons/md";
 import { ProjectCard } from "@/components";
 import { motion, useAnimationControls } from "framer-motion";
+import { Helmet } from "react-helmet";
 import myProjects from "@/components/ProjectsData";
 
 export const Home = () => {
+  // head
+  const Head = () => (
+    <Helmet>
+      <title>Home</title>
+    </Helmet>
+  );
   /* start layouts */
   const Hero = () => (
     <div className="flex md:justify-center md:gap-20 gap-5 md:mt-16 mt-3 py-10">
@@ -230,6 +237,7 @@ export const Home = () => {
   /* End layouts */
   return (
     <section className="md:px-32 px-6 py-10 bg-main-bg-light dark:bg-main-bg-dark min-h-screen">
+      <Head />
       <Hero />
       <Projects />
       <GetToKnow />

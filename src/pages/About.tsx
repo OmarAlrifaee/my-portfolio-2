@@ -3,7 +3,14 @@ import { Button } from "@/components/ui/button";
 import { MdArrowRightAlt } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 export const About = () => {
+  // head
+  const Head = () => (
+    <Helmet>
+      <title>About</title>
+    </Helmet>
+  );
   /* layouts */
   const Info = ({
     title,
@@ -29,6 +36,7 @@ export const About = () => {
   /* layouts */
   return (
     <section className="md:px-32 px-6 py-10 bg-main-bg-light dark:bg-main-bg-dark min-h-screen">
+      <Head />
       <Header
         title={"A little bit about me"}
         description={"Who I am and what I do."}

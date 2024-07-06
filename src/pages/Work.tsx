@@ -1,9 +1,16 @@
 import { Header, ProjectCard } from "@/components";
 import myProjects from "@/components/ProjectsData";
+import { Helmet } from "react-helmet";
 
 export const Work = () => {
+  const Head = () => (
+    <Helmet>
+      <title>Work</title>
+    </Helmet>
+  );
   return (
     <section className="md:px-32 px-6 py-10 bg-main-bg-light dark:bg-main-bg-dark min-h-screen">
+      <Head />
       <Header
         description="Projects and ideas I’ve worked on."
         title="My Work"
