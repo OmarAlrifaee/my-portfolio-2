@@ -35,7 +35,9 @@ export const Home = () => {
         </p>
         <div className="flex items-center md:justify-normal justify-center gap-5 md:mt-8 mt-5">
           <Button variant={"destructive"} size={"lg"} className="font-bold">
-            <a href="https://flowcv.com/resume/cnfrp5mfb4">Show Cv</a>
+            <a href="https://flowcv.com/resume/cnfrp5mfb4" target="_blank">
+              Show Cv
+            </a>
           </Button>
           <Button size={"lg"} variant={"secondary"} className="font-bold">
             <Link to={"/contact"}>get in touch</Link>
