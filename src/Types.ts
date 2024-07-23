@@ -7,7 +7,7 @@ export type DarkModeProviderProps = {
 };
 export type Project = {
   title: string;
-  description: string;
+  description: string | string[];
   imageUrl: string;
   link: string;
 };

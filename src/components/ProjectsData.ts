@@ -17,8 +17,18 @@ const myProjects: ProjectsData = {
   All: [
     {
       title: "Next E-commerce",
-      description:
-        "a fullstack ecommerce app build using nextjs and mongodb database with a dashboard to add edit or remove products, users, categories, and an auth system using jwt and nextjs middleware with a full search and filtering functinality and a cart system with a real payment using stripe and alot more i highly recommened visit this website and discover it you can sign in with these to see the dashboard email: admin@gmail.com  password: admin123 (all in small case)",
+      description: [
+        "home page with sliders for best products and all categories",
+        "shop page contains all the products with a pagination functinality",
+        "add, remove, or edit the count of products in your cart",
+        "checkout system using stripe to make a real payment functinality",
+        "full control dashboard where you can add, edit, delete ( categories, products, users, users carts, orders )",
+        "full auth system and protected routes with json web token using server actions and nextjs middleware",
+        "techs: nextjs, react, typescript, mongoDB, tailwindcss, and more",
+        "note: to see the dashboard use this account",
+        "email: admin@gmail.com",
+        "password: admin123",
+      ],
       imageUrl: NEXT_ECOMMERCE_PHOTO,
       link: "https://next-ecommerce-lyart-psi.vercel.app/",
     },
@@ -31,8 +41,16 @@ const myProjects: ProjectsData = {
     },
     {
       title: "Snap Gram a social media fullstack app",
-      description:
-        "i'ts a social media app similer to instagram you can create edit and remove posts as well as you can have a profile with auth system using appwrite platform for the backend and react with context api for auth as well as the strong shadcn ui library take a look..",
+      description: [
+        "auth system using appwrite platform for codeless backend",
+        "home page contains all the posts",
+        "explore page with an infinit scrolling using react query infinit scroll and search functinality",
+        "saves page to show all of your saved posts",
+        "peaple page to show all the users in the app",
+        "profile page to show, edit your avatar, bio, username and show all of your liked and your own posts",
+        "add, edit delete, save, unsave or like, unlike posts",
+        "techs: react, tailwindcss, shadcn ui, react query, typescript and more",
+      ],
       imageUrl: SNAPGRAM_PHOTO,
       link: "https://snapgram-inky-xi.vercel.app/",
     },
@@ -116,15 +134,36 @@ const myProjects: ProjectsData = {
   Best: [
     {
       title: "Next E-commerce",
-      description:
-        "a fullstack ecommerce app build using nextjs and mongodb database with a dashboard to add edit or remove products, users, categories, and an auth system using jwt and nextjs middleware with a full search and filtering functinality and a cart system with a real payment using stripe and alot more i highly recommened visit this website and discover it you can sign in with these to see the dashboard email: admin@gmail.com  password: admin123 (all in small case)",
+      description: [
+        "home page with sliders for best products and all categories",
+        "shop page contains all the products with a pagination functinality",
+        "add, remove, or edit the count of products in your cart",
+        "checkout system using stripe to make a real payment functinality",
+        "full control dashboard where you can add, edit, delete ( categories, products, users, users carts, orders )",
+        "full auth system and protected routes with json web token using server actions and nextjs middleware",
+        "techs: nextjs, react, typescript, mongoDB, tailwindcss, and more",
+        "note: to see the dashboard use this account",
+        "email: admin@gmail.com",
+        "password: admin123",
+      ],
+
       imageUrl: NEXT_ECOMMERCE_PHOTO,
       link: "https://next-ecommerce-lyart-psi.vercel.app/",
     },
     {
       title: "Snap Gram a social media fullstack app",
-      description:
-        "i'ts a social media app similer to instagram you can create edit and remove posts as well as you can have a profile with auth system using appwrite platform for the backend and react with context api for auth as well as the strong shadcn ui library take a look..",
+      // description:
+      //   "i'ts a social media app similer to instagram you can create edit and remove posts as well as you can have a profile with auth system using appwrite platform for the backend and react with context api for auth as well as the strong shadcn ui library take a look..",
+      description: [
+        "auth system using appwrite platform for codeless backend",
+        "home page contains all the posts",
+        "explore page with an infinit scrolling using react query infinit scroll and search functinality",
+        "saves page to show all of your saved posts",
+        "peaple page to show all the users in the app",
+        "profile page to show, edit your avatar, bio, username and show all of your liked and your own posts",
+        "add, edit delete, save, unsave or like, unlike posts",
+        "techs: react, tailwindcss, shadcn ui, react query, typescript and more",
+      ],
       imageUrl: SNAPGRAM_PHOTO,
       link: "https://snapgram-inky-xi.vercel.app/",
     },

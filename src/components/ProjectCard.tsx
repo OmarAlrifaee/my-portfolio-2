@@ -22,9 +22,22 @@ export const ProjectCard = ({
         <h3 className="text-[30px] capitalize md:text-start text-center font-semibold dark:text-light-text text-dark-text font-Poetsen">
           {title}
         </h3>
-        <p className="capitalize text-dark-text-muted dark:text-light-text-muted text-[16px] leading-[1.8] mt-6 md:text-start text-center">
-          {description}
-        </p>
+        {Array.isArray(description) ? (
+          <div className="flex flex-col gap-1 py-5">
+            {description.map((line) => (
+              <p
+                key={line}
+                className="capitalize text-dark-text-muted dark:text-light-text-muted text-[16px] md:text-start text-center"
+              >
+                -{line}
+              </p>
+            ))}
+          </div>
+        ) : (
+          <p className="capitalize text-dark-text-muted dark:text-light-text-muted text-[16px] leading-[1.8] mt-6 md:text-start text-center">
+            {description}
+          </p>
+        )}
         <Button
           variant={"link"}
           className="md:mx-0 mx-auto mt-5 px-0 flex items-center gap-3 justify-center md:absolute md:left-10 md:bottom-5 font-Poetsen"
