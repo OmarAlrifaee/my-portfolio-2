@@ -1,8 +1,18 @@
 import { Header, ProjectCard } from "@/components";
-import myProjects from "@/components/ProjectsData";
+import { getProjects } from "@/lib/api";
+import { ProjectsData } from "@/Types";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 export const Work = () => {
+  const [projects, setProjects] = useState<ProjectsData>([]);
+  useEffect(() => {
+    (async () => {
+      const data = await getProjects();
+      if (!data) throw Error;
+      setProjects(data);
+    })();
+  }, []);
   const Head = () => (
     <Helmet>
       <title>Work</title>
@@ -16,7 +26,7 @@ export const Work = () => {
         title="My Work"
       />
       <ul className="flex flex-col items-center gap-5 mt-10 py-5">
-        {myProjects.All.map((project) => (
+        {projects.map((project) => (
           <ProjectCard project={project} key={project.link} />
         ))}
       </ul>

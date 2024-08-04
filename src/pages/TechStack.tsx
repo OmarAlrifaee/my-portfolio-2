@@ -1,7 +1,16 @@
 import { Header, TechBox } from "@/components";
-import skillsData from "@/components/skillsData";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import { SkillsData } from "@/Types";
+import { getSkills } from "@/lib/api";
 export const TechStack = () => {
+  const [skills, setSkills] = useState<SkillsData>([]);
+  useEffect(() => {
+    (async () => {
+      const data = await getSkills();
+      setSkills(data!);
+    })();
+  }, []);
   const Head = () => (
     <Helmet>
       <title>Tech Stack</title>
@@ -15,8 +24,8 @@ export const TechStack = () => {
         description={"The tools and technologies I use"}
       />
       <ul className="flex justify-center flex-wrap gap-5 mt-10 py-5">
-        {skillsData.map(({ text, url }) => (
-          <TechBox key={text} text={text} imageUrl={url} />
+        {skills.map(({ title, img }) => (
+          <TechBox key={title} title={title} img={img} />
         ))}
       </ul>
     </section>

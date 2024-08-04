@@ -8,9 +8,20 @@ import { MdArrowRightAlt } from "react-icons/md";
 import { ProjectCard } from "@/components";
 import { motion, useAnimationControls } from "framer-motion";
 import { Helmet } from "react-helmet";
-import myProjects from "@/components/ProjectsData";
+import { useEffect, useState } from "react";
+import { ProjectsData } from "@/Types";
+import { getProjects } from "@/lib/api";
 
 export const Home = () => {
+  const [projects, setProjects] = useState<ProjectsData>([]);
+  useEffect(() => {
+    (async () => {
+      const data = await getProjects();
+      console.log(data);
+      if (!data) throw Error;
+      setProjects(data);
+    })();
+  }, []);
   // head
   const Head = () => (
     <Helmet>
@@ -64,9 +75,11 @@ export const Home = () => {
         Best Projects
       </h2>
       <ul className="flex flex-col items-center gap-5">
-        {myProjects.Best.map((project) => (
-          <ProjectCard project={project} key={project.link} />
-        ))}
+        {projects
+          .filter((p) => p.isBest)
+          .map((project) => (
+            <ProjectCard project={project} key={project.link} />
+          ))}
       </ul>
     </div>
   );

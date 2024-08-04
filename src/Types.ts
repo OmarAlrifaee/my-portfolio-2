@@ -1,3 +1,18 @@
+import { Models } from "appwrite";
+
+export type Project = {
+  title: string;
+  description: string | string[];
+  img: string;
+  link: string;
+  isBest: boolean;
+} & Models.Document;
+export type ProjectsData = Project[];
+export type Skill = {
+  title: string;
+  img: string;
+} & Models.Document;
+export type SkillsData = Skill[];
 export type DarkModeContextType = {
   dark: boolean;
   setDark: React.Dispatch<React.SetStateAction<boolean>>;
@@ -5,16 +20,7 @@ export type DarkModeContextType = {
 export type DarkModeProviderProps = {
   children: React.ReactNode;
 };
-export type Project = {
-  title: string;
-  description: string | string[];
-  imageUrl: string;
-  link: string;
-};
-export type ProjectsData = {
-  All: Project[];
-  Best: Project[];
-};
+
 export type FooterLink = {
   name: string;
   url: string;
@@ -23,8 +29,3 @@ export type FooterData = {
   links: FooterLink[];
   elseWhare: FooterLink[];
 };
-export type Skill = {
-  text: string;
-  url: string;
-};
-export type SkillsData = Skill[];

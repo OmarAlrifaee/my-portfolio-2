@@ -1,11 +1,5 @@
 import { motion, useAnimationControls } from "framer-motion";
-export const TechBox = ({
-  imageUrl,
-  text,
-}: {
-  imageUrl: string;
-  text: string;
-}) => {
+export const TechBox = ({ title, img }: { img: string; title: string }) => {
   const controls = useAnimationControls();
   return (
     <motion.div
@@ -20,15 +14,15 @@ export const TechBox = ({
     >
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[125px] h-[125px]">
         <motion.img
-          src={imageUrl}
-          alt={text}
-          className="w-full h-full object-cover"
+          src={img}
+          alt={title}
+          className="w-full h-full rounded-full object-cover"
           animate={controls}
           transition={{ duration: 0.3 }}
         />
       </div>
       <p className="absolute bottom-3 left-1/2 -translate-x-1/2 dark:text-light-text text-dark-text font-bold font-Poetsen capitalize text-lg">
-        {text}
+        {title}
       </p>
     </motion.div>
   );

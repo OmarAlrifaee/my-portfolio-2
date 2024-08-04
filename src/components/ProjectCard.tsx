@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Project } from "@/Types";
 import { motion, useAnimationControls } from "framer-motion";
 export const ProjectCard = ({
-  project: { description, imageUrl, link, title },
+  project: { description, img, link, title },
 }: {
   project: Project;
 }) => {
@@ -53,7 +53,7 @@ export const ProjectCard = ({
         animate={controls}
       >
         <img
-          src={imageUrl}
+          src={img}
           alt={title}
           className="w-full h-full object-fill"
           loading="lazy"
