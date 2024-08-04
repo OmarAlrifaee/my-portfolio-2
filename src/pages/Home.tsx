@@ -11,17 +11,9 @@ import { Helmet } from "react-helmet";
 import { useEffect, useState } from "react";
 import { ProjectsData } from "@/Types";
 import { getProjects } from "@/lib/api";
+import ProjectsSketlon from "@/components/ProjectsSketlon";
 
 export const Home = () => {
-  const [projects, setProjects] = useState<ProjectsData>([]);
-  useEffect(() => {
-    (async () => {
-      const data = await getProjects();
-      console.log(data);
-      if (!data) throw Error;
-      setProjects(data);
-    })();
-  }, []);
   // head
   const Head = () => (
     <Helmet>
@@ -69,20 +61,41 @@ export const Home = () => {
       </motion.div>
     </div>
   );
-  const Projects = () => (
-    <div className="md:mt-12 mt-6 py-10">
-      <h2 className="md:text-[50px] text-[30px] md:text-start text-center font-Poetsen font-extrabold dark:text-light-text text-dark-text capitalize">
-        Best Projects
-      </h2>
-      <ul className="flex flex-col items-center gap-5">
-        {projects
-          .filter((p) => p.isBest)
-          .map((project) => (
-            <ProjectCard project={project} key={project.link} />
-          ))}
-      </ul>
-    </div>
-  );
+  const Projects = () => {
+    const [projects, setProjects] = useState<ProjectsData>([]);
+    const [isLoading, setIsLoading] = useState(false);
+    useEffect(() => {
+      setIsLoading(true);
+      (async () => {
+        const data = await getProjects();
+        console.log(data);
+        if (!data) throw Error;
+        setProjects(data);
+        setIsLoading(false);
+      })();
+    }, []);
+    return (
+      <div className="md:mt-12 mt-6 py-10">
+        <h2 className="md:text-[50px] text-[30px] md:text-start text-center font-Poetsen font-extrabold dark:text-light-text text-dark-text capitalize">
+          Best Projects
+        </h2>
+        <ul className="flex flex-col items-center gap-5">
+          {isLoading ? (
+            <>
+              <ProjectsSketlon />
+              <ProjectsSketlon />
+            </>
+          ) : (
+            projects
+              .filter((p) => p.isBest)
+              .map((project) => (
+                <ProjectCard project={project} key={project.link} />
+              ))
+          )}
+        </ul>
+      </div>
+    );
+  };
   const GetToKnow = () => (
     <div className="mt-12 py-10">
       <h2 className="md:text-[50px] text-[30px] md:text-start text-center font-Poetsen font-extrabold dark:text-light-text text-dark-text capitalize">

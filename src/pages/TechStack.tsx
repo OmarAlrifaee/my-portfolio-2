@@ -3,12 +3,16 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { SkillsData } from "@/Types";
 import { getSkills } from "@/lib/api";
+import SkillsSketlon from "@/components/SkillsSketlon";
 export const TechStack = () => {
   const [skills, setSkills] = useState<SkillsData>([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    setIsLoading(true);
     (async () => {
       const data = await getSkills();
       setSkills(data!);
+      setIsLoading(false);
     })();
   }, []);
   const Head = () => (
@@ -24,9 +28,18 @@ export const TechStack = () => {
         description={"The tools and technologies I use"}
       />
       <ul className="flex justify-center flex-wrap gap-5 mt-10 py-5">
-        {skills.map(({ title, img }) => (
-          <TechBox key={title} title={title} img={img} />
-        ))}
+        {isLoading ? (
+          <>
+            <SkillsSketlon />
+            <SkillsSketlon />
+            <SkillsSketlon />
+            <SkillsSketlon />
+          </>
+        ) : (
+          skills.map(({ title, img }) => (
+            <TechBox key={title} title={title} img={img} />
+          ))
+        )}
       </ul>
     </section>
   );

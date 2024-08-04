@@ -1,4 +1,5 @@
 import { Header, ProjectCard } from "@/components";
+import ProjectsSketlon from "@/components/ProjectsSketlon";
 import { getProjects } from "@/lib/api";
 import { ProjectsData } from "@/Types";
 import { useState, useEffect } from "react";
@@ -6,11 +7,14 @@ import { Helmet } from "react-helmet";
 
 export const Work = () => {
   const [projects, setProjects] = useState<ProjectsData>([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    setIsLoading(true);
     (async () => {
       const data = await getProjects();
       if (!data) throw Error;
       setProjects(data);
+      setIsLoading(false);
     })();
   }, []);
   const Head = () => (
@@ -26,9 +30,19 @@ export const Work = () => {
         title="My Work"
       />
       <ul className="flex flex-col items-center gap-5 mt-10 py-5">
-        {projects.map((project) => (
-          <ProjectCard project={project} key={project.link} />
-        ))}
+        {isLoading ? (
+          <>
+            <ProjectsSketlon />
+            <ProjectsSketlon />
+            <ProjectsSketlon />
+            <ProjectsSketlon />
+            <ProjectsSketlon />
+          </>
+        ) : (
+          projects.map((project) => (
+            <ProjectCard project={project} key={project.link} />
+          ))
+        )}
       </ul>
     </section>
   );
