@@ -13,6 +13,11 @@ import VS from "/assets/skills/vsCode.svg";
 import ZUSTAND from "/assets/skills/zustand.webp";
 import REACT_ROUTER from "/assets/skills/react-router-svgrepo-com.svg";
 import NEXTJS from "/assets/skills/nextjs.jpeg";
+import REACT_QUERY from "/assets/skills/react-query.svg";
+import SHADCN_UI from "/assets/skills/shadcn-ui.svg";
+import JEST from "/assets/skills/jest.svg";
+import VITEST from "/assets/skills/vitest.svg";
+import TESTING_LIBRARY from "/assets/skills/testing-library.jpeg";
 import { SkillsData } from "@/Types";
 
 const skillsData: SkillsData = [
@@ -61,12 +66,32 @@ const skillsData: SkillsData = [
     url: REDUX,
   },
   {
+    text: "REACT QUERY",
+    url: REACT_QUERY,
+  },
+  {
+    text: "SHADCN UI",
+    url: SHADCN_UI,
+  },
+  {
     text: "ZUSTAND",
     url: ZUSTAND,
   },
   {
     text: "FRAMER MOTION",
     url: FRAMER_MOTION,
+  },
+  {
+    text: "JEST",
+    url: JEST,
+  },
+  {
+    text: "VITEST",
+    url: VITEST,
+  },
+  {
+    text: "TESTING LIBRARY",
+    url: TESTING_LIBRARY,
   },
   {
     text: "GIT & GITHUB",
