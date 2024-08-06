@@ -79,7 +79,7 @@ export const Home = () => {
         <h2 className="md:text-[50px] text-[30px] md:text-start text-center font-Poetsen font-extrabold dark:text-light-text text-dark-text capitalize">
           Best Projects
         </h2>
-        <ul className="flex flex-col items-center gap-5">
+        <ul className="flex flex-wrap gap-5 mt-10 lg:justify-normal justify-center">
           {isLoading ? (
             <>
               <ProjectsSketlon />

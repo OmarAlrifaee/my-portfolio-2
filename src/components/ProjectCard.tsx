@@ -1,9 +1,9 @@
-import { MdArrowRightAlt } from "react-icons/md";
 import { Button } from "./ui/button";
 import { Project } from "@/Types";
 import { motion, useAnimationControls } from "framer-motion";
+import { Link } from "react-router-dom";
 export const ProjectCard = ({
-  project: { description, img, link, title },
+  project: { img, link, title, $id, githubLink },
 }: {
   project: Project;
 }) => {
@@ -11,54 +11,44 @@ export const ProjectCard = ({
   const controls = useAnimationControls();
   return (
     <motion.div
-      className="origin-top relative w-full flex items-center md:justify-between gap-12 md:flex-row flex-col-reverse bg-card-light dark:bg-card-dark py-12 md:px-10 px-5 rounded-xl border border-dark-text-muted dark:border-dark-text-muted mt-5"
+      className="origin-top relative md:w-[400px] w-full h-[400px]  bg-card-light dark:bg-card-dark p-5 rounded-xl border border-dark-text-muted dark:border-dark-text-muted"
       initial={{ scaleY: 0, opacity: 0 }}
       whileInView={{ scaleY: 1, opacity: 1 }}
       transition={{ duration: 0.3 }}
       onMouseOver={() => controls.start({ rotate: "2deg" })}
       onMouseOut={() => controls.start({ rotate: 0 })}
     >
-      <article className="md:w-1/2 w-full">
-        <h3 className="text-[30px] capitalize md:text-start text-center font-semibold dark:text-light-text text-dark-text font-Poetsen">
-          {title}
-        </h3>
-        {Array.isArray(description) ? (
-          <div className="flex flex-col gap-1 py-5">
-            {description.map((line) => (
-              <p
-                key={line}
-                className="capitalize text-dark-text-muted dark:text-light-text-muted text-[16px] md:text-start text-center"
-              >
-                -{line}
-              </p>
-            ))}
-          </div>
-        ) : (
-          <p className="capitalize text-dark-text-muted dark:text-light-text-muted text-[16px] leading-[1.8] mt-6 md:text-start text-center">
-            {description}
-          </p>
-        )}
-        <Button
-          variant={"link"}
-          className="md:mx-0 mx-auto mt-5 px-0 flex items-center gap-3 justify-center md:absolute md:left-10 md:bottom-5 font-Poetsen"
-        >
-          <a href={link} target="_blank">
-            Visit Site
-          </a>
-          <MdArrowRightAlt size={30} />
-        </Button>
-      </article>
       <motion.div
-        className="md:w-1/2 w-full md:h-[300px] rounded-md overflow-hidden"
+        className="w-full h-[200px] rounded-md overflow-hidden"
         animate={controls}
       >
         <img
-          src={img}
+          src={img[0]}
           alt={title}
           className="w-full h-full object-fill"
           loading="lazy"
         />
       </motion.div>
+      <h3 className="text-[30px] capitalize text-center mt-5 font-semibold dark:text-light-text text-dark-text font-Poetsen">
+        {title}
+      </h3>
+      <article className="md:w-1/2 w-full">
+        <div className="flex items-center gap-5 w-full justify-center absolute bottom-5 left-1/2 -translate-x-1/2">
+          <Button variant={"secondary"} className="font-Poetsen">
+            <a href={link} target="_blank" className="block w-full">
+              Live
+            </a>
+          </Button>
+          <Button variant={"secondary"} className="font-Poetsen">
+            <a href={githubLink} target="_blank" className="block w-full">
+              Github
+            </a>
+          </Button>
+          <Button variant={"secondary"} className="font-Poetsen">
+            <Link to={`/work/${$id}`}>Show Details</Link>
+          </Button>
+        </div>
+      </article>
     </motion.div>
   );
 };

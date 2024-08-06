@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { About, Contact, Home, RootLayout, TechStack, Work } from "./pages";
 import { ScrollToTop } from "./components";
 import { Toaster } from "@/components/ui/toaster";
+import ProjectDetails from "./pages/ProjectDetails";
 function App() {
   const { dark } = useContext(DarkModeContext);
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route index Component={Home} />
           <Route path="/about" Component={About} />
           <Route path="/work" Component={Work} />
+          <Route path="/work/:id" Component={ProjectDetails} />
           <Route path="/contact" Component={Contact} />
           <Route path="/tech-stack" Component={TechStack} />
         </Route>

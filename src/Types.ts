@@ -2,10 +2,11 @@ import { Models } from "appwrite";
 
 export type Project = {
   title: string;
-  description: string | string[];
-  img: string;
+  description: string[];
+  img: string[];
   link: string;
   isBest: boolean;
+  githubLink: string;
 } & Models.Document;
 export type ProjectsData = Project[];
 export type Skill = {

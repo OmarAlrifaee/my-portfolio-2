@@ -29,7 +29,7 @@ export const Work = () => {
         description="Projects and ideas I’ve worked on."
         title="My Work"
       />
-      <ul className="flex flex-col items-center gap-5 mt-10 py-5">
+      <ul className="flex flex-wrap gap-5 mt-10 lg:justify-normal justify-center">
         {isLoading ? (
           <>
             <ProjectsSketlon />
