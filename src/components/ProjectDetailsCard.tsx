@@ -38,10 +38,10 @@ const ProjectDetailsCard = ({ project }: Props) => {
             loading="lazy"
           />
         </motion.div>
-        <ul className="my-5 flex items-center gap-5 flex-wrap">
+        <ul className="my-5 flex items-center gap-5 flex-wrap justify-center">
           {project?.img?.map((img, index) => (
             <div
-              className={`rounded-md overflow-hidden w-[100px] h-[100px] cursor-pointer ${
+              className={`rounded-md overflow-hidden max-w-[100px] h-[100px] cursor-pointer ${
                 index === imgIndex ? "border-2 border-primary" : ""
               }`}
               onClick={() => {

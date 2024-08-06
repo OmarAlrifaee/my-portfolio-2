@@ -35,17 +35,23 @@ export const ProjectCard = ({
       <article className="md:w-1/2 w-full">
         <div className="flex items-center gap-5 w-full justify-center absolute bottom-5 left-1/2 -translate-x-1/2">
           <Button variant={"secondary"} className="font-Poetsen">
-            <a href={link} target="_blank" className="block w-full">
+            <a href={link} target="_blank" className="block w-full h-full">
               Live
             </a>
           </Button>
           <Button variant={"secondary"} className="font-Poetsen">
-            <a href={githubLink} target="_blank" className="block w-full">
+            <a
+              href={githubLink}
+              target="_blank"
+              className="block w-full h-full"
+            >
               Github
             </a>
           </Button>
           <Button variant={"secondary"} className="font-Poetsen">
-            <Link to={`/work/${$id}`}>Show Details</Link>
+            <Link to={`/work/${$id}`} className="block w-full h-full">
+              Show Details
+            </Link>
           </Button>
         </div>
       </article>
