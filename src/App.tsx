@@ -5,6 +5,7 @@ import { About, Contact, Home, RootLayout, TechStack, Work } from "./pages";
 import { ScrollToTop } from "./components";
 import { Toaster } from "@/components/ui/toaster";
 import ProjectDetails from "./pages/ProjectDetails";
+import FileUploader from "./pages/UploadPhotos";
 function App() {
   const { dark } = useContext(DarkModeContext);
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/work/:id" Component={ProjectDetails} />
           <Route path="/contact" Component={Contact} />
           <Route path="/tech-stack" Component={TechStack} />
+          <Route path="/upload-photos/:id" Component={FileUploader} />
         </Route>
       </Routes>
       <Toaster />

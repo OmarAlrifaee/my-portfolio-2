@@ -25,7 +25,7 @@ export const ProjectCard = ({
         <img
           src={img[0]}
           alt={title}
-          className="w-full h-full object-fill"
+          className="w-full h-full object-cover object-top"
           loading="lazy"
         />
       </motion.div>

@@ -39,23 +39,25 @@ const ProjectDetailsCard = ({ project }: Props) => {
           />
         </motion.div>
         <ul className="my-5 flex items-center gap-5 flex-wrap justify-center">
-          {project?.img?.map((img, index) => (
-            <div
-              className={`rounded-md overflow-hidden max-w-[100px] h-[100px] cursor-pointer ${
-                index === imgIndex ? "border-2 border-primary" : ""
-              }`}
-              onClick={() => {
-                imgRef.current.scrollIntoView({ behavior: "smooth" });
-                setImgIndex(index);
-              }}
-            >
-              <img
-                src={img}
-                alt={project?.title}
-                className="w-full h-full object-fill"
-              />
-            </div>
-          ))}
+          {project?.img?.length
+            ? project?.img?.map((img, index) => (
+                <div
+                  className={`rounded-md overflow-hidden max-w-[100px] h-[100px] cursor-pointer ${
+                    index === imgIndex ? "border-2 border-primary" : ""
+                  }`}
+                  onClick={() => {
+                    imgRef.current.scrollIntoView({ behavior: "smooth" });
+                    setImgIndex(index);
+                  }}
+                >
+                  <img
+                    src={img}
+                    alt={project?.title}
+                    className="w-full h-full object-fill"
+                  />
+                </div>
+              ))
+            : ""}
         </ul>
         <Button
           variant={"secondary"}
