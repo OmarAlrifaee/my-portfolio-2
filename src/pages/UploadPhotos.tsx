@@ -6,7 +6,7 @@ const FileUploader = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   useEffect(() => {
-    if (id !== import.meta.env.VITE_ADMIN) {
+    if (id != import.meta.env.VITE_ADMIN) {
       navigate("/", { replace: true });
     }
   }, [id, navigate]);
