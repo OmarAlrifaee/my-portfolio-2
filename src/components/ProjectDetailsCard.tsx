@@ -1,14 +1,14 @@
 import { Project } from "@/Types";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import Popup from "./Popup";
 
 type Props = {
   project: Project;
 };
 const ProjectDetailsCard = ({ project }: Props) => {
-  const [imgIndex, setImgIndex] = useState(0);
-  const imgRef = useRef<HTMLDivElement>(null!);
+  const [openPopup, setOpenPopup] = useState(false);
   return (
     <motion.div
       className="origin-top relative w-full bg-card-light dark:bg-card-dark p-5 rounded-xl border border-dark-text-muted dark:border-dark-text-muted"
@@ -30,35 +30,18 @@ const ProjectDetailsCard = ({ project }: Props) => {
             </p>
           ))}
         </div>
-        <motion.div className="w-full rounded-md overflow-hidden" ref={imgRef}>
-          <img
-            src={project?.img[imgIndex]}
-            alt={project?.title}
-            className="w-full h-full object-fill"
-            loading="lazy"
-          />
-        </motion.div>
-        <ul className="my-5 flex items-center gap-5 flex-wrap justify-center">
-          {project?.img?.length
-            ? project?.img?.map((img, index) => (
-                <div
-                  className={`rounded-md overflow-hidden max-w-[100px] h-[100px] cursor-pointer ${
-                    index === imgIndex ? "border-2 border-primary" : ""
-                  }`}
-                  onClick={() => {
-                    imgRef.current.scrollIntoView({ behavior: "smooth" });
-                    setImgIndex(index);
-                  }}
-                >
-                  <img
-                    src={img}
-                    alt={project?.title}
-                    className="w-full h-full object-fill"
-                  />
-                </div>
-              ))
-            : ""}
-        </ul>
+        {openPopup ? (
+          <Popup imgs={project?.img} setOpenPopup={setOpenPopup} />
+        ) : (
+          ""
+        )}
+        <Button
+          variant={"secondary"}
+          className="font-Poetsen block mt-3 mx-auto w-full"
+          onClick={() => setOpenPopup(true)}
+        >
+          Show Images
+        </Button>
         <Button
           variant={"secondary"}
           className="font-Poetsen block mt-3 mx-auto w-full"
