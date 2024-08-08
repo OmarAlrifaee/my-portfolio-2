@@ -34,11 +34,16 @@ const Popup = ({ imgs, setOpenPopup }: Props) => {
           <IoMdArrowDropright size={40} />
         </Button>
       </div>
-      <img
-        src={imgs[imgIndex]}
-        alt=""
-        className="md:max-w-[70%] max-w-[90%] max-h-[90%] rounded-lg"
-      />
+      {imgs?.map((img, index) => (
+        <img
+          key={img}
+          src={img}
+          alt=""
+          className={`md:max-w-[70%] max-w-[90%] max-h-[90%] rounded-lg ${
+            index === imgIndex ? "block" : "hidden"
+          }`}
+        />
+      ))}
     </div>,
     document.getElementById("popup")!
   );
