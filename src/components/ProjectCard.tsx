@@ -3,7 +3,7 @@ import { Project } from "@/Types";
 import { motion, useAnimationControls } from "framer-motion";
 import { Link } from "react-router-dom";
 export const ProjectCard = ({
-  project: { img, link, title, $id, githubLink },
+  project: { isFirst, img, link, title, $id, githubLink },
 }: {
   project: Project;
 }) => {
@@ -11,7 +11,9 @@ export const ProjectCard = ({
   const controls = useAnimationControls();
   return (
     <motion.div
-      className="origin-top relative md:w-[400px] w-full h-[400px]  bg-card-light dark:bg-card-dark p-5 rounded-xl border border-dark-text-muted dark:border-dark-text-muted"
+      className={`origin-top ${
+        isFirst ? "order-first" : ""
+      } relative md:w-[400px] w-full h-[400px]  bg-card-light dark:bg-card-dark p-5 rounded-xl border border-dark-text-muted dark:border-dark-text-muted`}
       initial={{ scaleY: 0, opacity: 0 }}
       whileInView={{ scaleY: 1, opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -39,15 +41,19 @@ export const ProjectCard = ({
               Live
             </a>
           </Button>
-          <Button variant={"secondary"} className="font-Poetsen">
-            <a
-              href={githubLink}
-              target="_blank"
-              className="block w-full h-full"
-            >
-              Github
-            </a>
-          </Button>
+          {githubLink ? (
+            <Button variant={"secondary"} className="font-Poetsen">
+              <a
+                href={githubLink}
+                target="_blank"
+                className="block w-full h-full"
+              >
+                Github
+              </a>
+            </Button>
+          ) : (
+            ""
+          )}
           <Button variant={"secondary"} className="font-Poetsen">
             <Link to={`/work/${$id}`} className="block w-full h-full">
               Show Details

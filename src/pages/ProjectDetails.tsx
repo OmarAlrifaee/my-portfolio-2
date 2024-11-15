@@ -18,7 +18,6 @@ const ProjectDetails = () => {
       setIsLoading(false);
     })();
   }, [id]);
-  console.log(project);
 
   return (
     <section className="md:px-32 px-6 py-10 bg-main-bg-light dark:bg-main-bg-dark min-h-screen">

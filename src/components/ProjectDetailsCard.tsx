@@ -24,9 +24,19 @@ const ProjectDetailsCard = ({ project }: Props) => {
           {project?.description.map((line) => (
             <p
               key={line}
-              className="capitalize text-dark-text-muted dark:text-light-text font-semibold text-lg"
+              className="capitalize text-dark-text-muted dark:text-light-text text-md leading-8"
             >
-              • {line}
+              •{" "}
+              {line.includes(":") ? (
+                <>
+                  <span className="font-bold">
+                    {line.slice(0, line.indexOf(":"))}
+                  </span>
+                  <span>{line.slice(line.indexOf(":"))}</span>
+                </>
+              ) : (
+                line
+              )}
             </p>
           ))}
         </div>
@@ -35,13 +45,17 @@ const ProjectDetailsCard = ({ project }: Props) => {
         ) : (
           ""
         )}
-        <Button
-          variant={"secondary"}
-          className="font-Poetsen block mt-3 mx-auto w-full"
-          onClick={() => setOpenPopup(true)}
-        >
-          Show Images
-        </Button>
+        {project?.img?.length ? (
+          <Button
+            variant={"secondary"}
+            className="font-Poetsen block mt-3 mx-auto w-full"
+            onClick={() => setOpenPopup(true)}
+          >
+            Show Images
+          </Button>
+        ) : (
+          ""
+        )}
         <Button
           variant={"secondary"}
           className="font-Poetsen block mt-3 mx-auto w-full"
@@ -50,18 +64,22 @@ const ProjectDetailsCard = ({ project }: Props) => {
             Live
           </a>
         </Button>
-        <Button
-          variant={"secondary"}
-          className="font-Poetsen block mt-3 mx-auto w-full"
-        >
-          <a
-            href={project?.githubLink}
-            target="_blank"
-            className="block w-full"
+        {project.githubLink ? (
+          <Button
+            variant={"secondary"}
+            className="font-Poetsen block mt-3 mx-auto w-full"
           >
-            Github
-          </a>
-        </Button>
+            <a
+              href={project?.githubLink}
+              target="_blank"
+              className="block w-full"
+            >
+              Github
+            </a>
+          </Button>
+        ) : (
+          ""
+        )}
       </article>
     </motion.div>
   );

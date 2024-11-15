@@ -68,7 +68,6 @@ export const Home = () => {
       setIsLoading(true);
       (async () => {
         const data = await getProjects();
-        console.log(data);
         if (!data) throw Error;
         setProjects(data);
         setIsLoading(false);
@@ -82,6 +81,8 @@ export const Home = () => {
         <ul className="flex flex-wrap gap-5 mt-10 lg:justify-normal justify-center">
           {isLoading ? (
             <>
+              <ProjectsSketlon />
+              <ProjectsSketlon />
               <ProjectsSketlon />
               <ProjectsSketlon />
             </>

@@ -6,7 +6,8 @@ export type Project = {
   img: string[];
   link: string;
   isBest: boolean;
-  githubLink: string;
+  githubLink?: string;
+  isFirst?: boolean;
 } & Models.Document;
 export type ProjectsData = Project[];
 export type Skill = {
