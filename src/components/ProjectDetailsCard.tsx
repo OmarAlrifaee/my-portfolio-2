@@ -64,7 +64,7 @@ const ProjectDetailsCard = ({ project }: Props) => {
             Live
           </a>
         </Button>
-        {project.githubLink ? (
+        {project?.githubLink ? (
           <Button
             variant={"secondary"}
             className="font-Poetsen block mt-3 mx-auto w-full"
