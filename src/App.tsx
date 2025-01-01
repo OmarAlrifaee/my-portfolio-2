@@ -6,6 +6,7 @@ import { ScrollToTop } from "./components";
 import { Toaster } from "@/components/ui/toaster";
 import ProjectDetails from "./pages/ProjectDetails";
 import FileUploader from "./pages/UploadPhotos";
+import MetaTags from "./components/MetaTags";
 function App() {
   const { dark } = useContext(DarkModeContext);
   return (
@@ -23,6 +24,12 @@ function App() {
         </Route>
       </Routes>
       <Toaster />
+      <MetaTags
+        name="omar alrifai"
+        description="i am a frontend developer skilled in reactjs and nextjs"
+        image="/assets/avatar.png"
+        title="Omar Alrifai portfolio"
+      />
     </main>
   );
 }
