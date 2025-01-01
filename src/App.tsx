@@ -27,7 +27,7 @@ function App() {
       <MetaTags
         name="omar alrifai"
         description="i am a frontend developer skilled in reactjs and nextjs"
-        image="/assets/avatar.png"
+        image="avatar.png"
         title="Omar Alrifai portfolio"
       />
     </main>

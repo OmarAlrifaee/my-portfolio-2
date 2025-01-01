@@ -12,9 +12,12 @@ function MetaTags({ title = "", description = "", image = "", name = "" }) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       {/* OG image tags */}
-      <meta property="og:image" content={image} />
-      <meta property="og:image:secure_url" content={image} />
-      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image" content={`${window.location.href}${image}`} />
+      <meta
+        property="og:image:secure_url"
+        content={`${window.location.href}${image}`}
+      />
+      <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="200" />
       <meta property="og:image:alt" content={`Image of ${title} site`} />
       {/* Twitter tags */}
