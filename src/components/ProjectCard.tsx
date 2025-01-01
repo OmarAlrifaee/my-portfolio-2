@@ -36,11 +36,15 @@ export const ProjectCard = ({
       </h3>
       <article className="md:w-1/2 w-full">
         <div className="flex items-center gap-5 w-full justify-center absolute bottom-5 left-1/2 -translate-x-1/2">
-          <Button variant={"secondary"} className="font-Poetsen">
-            <a href={link} target="_blank" className="block w-full h-full">
-              Live
-            </a>
-          </Button>
+          {link ? (
+            <Button variant={"secondary"} className="font-Poetsen">
+              <a href={link} target="_blank" className="block w-full h-full">
+                Live
+              </a>
+            </Button>
+          ) : (
+            ""
+          )}
           {githubLink ? (
             <Button variant={"secondary"} className="font-Poetsen">
               <a

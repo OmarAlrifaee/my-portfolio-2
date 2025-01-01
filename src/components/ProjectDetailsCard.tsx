@@ -56,14 +56,18 @@ const ProjectDetailsCard = ({ project }: Props) => {
         ) : (
           ""
         )}
-        <Button
-          variant={"secondary"}
-          className="font-Poetsen block mt-3 mx-auto w-full"
-        >
-          <a href={project?.link} target="_blank" className="block w-full">
-            Live
-          </a>
-        </Button>
+        {project?.link ? (
+          <Button
+            variant={"secondary"}
+            className="font-Poetsen block mt-3 mx-auto w-full"
+          >
+            <a href={project?.link} target="_blank" className="block w-full">
+              Live
+            </a>
+          </Button>
+        ) : (
+          ""
+        )}
         {project?.githubLink ? (
           <Button
             variant={"secondary"}
