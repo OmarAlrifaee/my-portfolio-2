@@ -14,6 +14,10 @@ function MetaTags({ title = "", description = "", image = "", name = "" }) {
       {/* OG image tags */}
       <meta property="og:image" content={`${window.location.href}${image}`} />
       <meta
+        property="og:image:href"
+        content={`${window.location.href}${image}`}
+      />
+      <meta
         property="og:image:secure_url"
         content={`${window.location.href}${image}`}
       />
